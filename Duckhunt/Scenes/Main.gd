@@ -9,7 +9,10 @@ var score1 = 0
 var score2 = 0
 
 func _ready():
-	pass
+	$Button.hide()
+	$tema.play()
+	randomize()
+	
 
 
 func _on_horaCarroRapido_timeout():
@@ -34,3 +37,45 @@ func _on_horaCarroDevagar_timeout():
 	carroDevagar.position.y = pdevagar[randi() % prapido.size()]
 	#velocidade dos carros devagar
 	carroDevagar.linear_velocity = Vector2(rand_range(300, 325), 0)
+
+
+func _on_Player_pontua():
+	if score1 < 10:
+		score1 += 1
+		$ponto.play()
+		$placar1.text = str(score1)
+	if score1 >= 10:
+		$Button.show()
+		$tema.stop()
+		$resultado.text = "p1 Ganhou"
+		$ganhou.play()
+		$horaCarroDevagar.stop()
+		$horaCarroRapido.stop()
+
+
+func _on_Player2_pontua2():
+	if score2 < 10:
+		score2 += 1
+		$ponto.play()
+		$placar2.text = str(score2)
+	if score2 >= 10:
+		$Button.show()
+		$tema.stop()
+		$resultado.text = "p2 Ganhou"
+		$ganhou.play()
+		$horaCarroDevagar.stop()
+		$horaCarroRapido.stop()
+
+
+func _on_Button_pressed():
+	$Button.hide()
+	score1 = 0
+	score2 = 0
+	$placar1.text = "0"
+	$placar2.text = "0"
+	$resultado.text = ""
+	$horaCarroDevagar.start()
+	$horaCarroRapido.start()
+	$Player.volta()
+	$Player2.volta()
+	$tema.play()

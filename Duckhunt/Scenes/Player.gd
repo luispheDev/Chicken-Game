@@ -46,3 +46,7 @@ func _on_Player_body_entered(body):
 		$AudioStreamPlayer2D.play()
 	position.x = 400
 	position.y = 696
+
+func volta():
+	position.x = 320
+	position.y = 696
