@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Materiais/pista.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/ganha.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=5]
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sounds/Win.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/coin.wav" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 6 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ganha" parent="." instance=ExtResource( 2 )]
+position = Vector2( -2, 43 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 400, 696 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 944, 696 )
+
+[node name="horaCarroRapido" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="horaCarroDevagar" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[node name="placar1" type="Label" parent="."]
+margin_left = 300.0
+margin_top = 10.0
+margin_right = 349.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+
+[node name="placar2" type="Label" parent="."]
+margin_left = 920.0
+margin_top = 10.0
+margin_right = 944.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+
+[node name="resultado" type="Label" parent="."]
+margin_top = 10.0
+margin_right = 1280.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+
+[node name="ponto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="ganhou" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="horaCarroRapido" to="." method="_on_horaCarroRapido_timeout"]
+[connection signal="timeout" from="horaCarroDevagar" to="." method="_on_horaCarroDevagar_timeout"]

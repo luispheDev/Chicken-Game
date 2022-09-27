@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tractor.obj-305d9d64b92c65d2c279520345d91fca.mesh"
+
+[deps]
+
+files=[ "res://.import/tractor.obj-305d9d64b92c65d2c279520345d91fca.mesh" ]
+
+source_file="res://Materiais/Car/Models/OBJ format/tractor.obj"
+dest_files=[ "res://.import/tractor.obj-305d9d64b92c65d2c279520345d91fca.mesh", "res://.import/tractor.obj-305d9d64b92c65d2c279520345d91fca.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

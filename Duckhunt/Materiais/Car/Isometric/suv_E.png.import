@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/suv_E.png-3b59c68280e0fdaa5923e65db6100923.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Materiais/Car/Isometric/suv_E.png"
+dest_files=[ "res://.import/suv_E.png-3b59c68280e0fdaa5923e65db6100923.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
